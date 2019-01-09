@@ -1,6 +1,8 @@
 # Test
 
-O objetivo é criar um fomulário de cadastro aleatório para armazenar as informações digitadas na tela num banco de dados. Para este projeto, utilize o Spring Framework para o MVC e persistência de dados juntamente com o Hibernate + Spring Data. 
+O objetivo é criar um fomulário de cadastro aleatório para armazenar as informações digitadas na tela num banco de dados. 
+
+Para este projeto, utilize Spring Boot e, para persistência de dados, Spring Data e Hibernate.
 
 Ao finalizar, faça commit e envie o link do seu repositório para o email: italo.souza@acordocerto.com.br.
 
