@@ -4,10 +4,15 @@ angular.module('crudApp').controller('UserController',
     ['UserService', '$scope',  function( UserService, $scope) {
 
         var self = this;
-        self.usuario = {};
+        self.usuario = {
+          indAtivo : true
+        };
         self.users=[];
 
-        self.submit = submit;
+      self.estados = ['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'];
+
+
+      self.submit = submit;
         self.getAllUsers = getAllUsers;
         self.createUser = createUser;
         self.removeUser = removeUser;

@@ -28,25 +28,19 @@ public class RestApiController {
 		return new ResponseEntity<List<Usuario>>(usuarioService.findAllUsuarios(), HttpStatus.OK);
 	}
 
-	// -------------------Create a Usuario-------------------------------------------
-
 	@RequestMapping(value = "/user/", method = RequestMethod.POST)
 	public ResponseEntity<?> createUser(@RequestBody Usuario usuario, UriComponentsBuilder ucBuilder) {
-		logger.info("Creating Usuario : {}", usuario);
-
-		this.usuarios.add(usuario);
+		usuarioService.salvaUsuario(usuario);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setLocation(ucBuilder.path("/api/usuario/{id}").buildAndExpand(usuario.getId()).toUri());
 		return new ResponseEntity<String>(headers, HttpStatus.CREATED);
 	}
 
-	// ------------------- Delete a Usuario-----------------------------------------
-
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> deleteUser(@PathVariable("id") long id) {
 		logger.info("Fetching & Deleting Usuario with id {}", id);
 
-		//usuarios.remove()
+		usuarioService.removeUsuario(id);
 
 		return new ResponseEntity<Usuario>(HttpStatus.NO_CONTENT);
 	}

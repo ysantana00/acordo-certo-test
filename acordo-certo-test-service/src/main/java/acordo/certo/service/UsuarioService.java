@@ -1,6 +1,8 @@
 package acordo.certo.service;
 
 import acordo.certo.domain.model.Usuario;
+import acordo.certo.domain.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,22 +11,17 @@ import java.util.List;
 @Service
 public class UsuarioService {
 
-  List<Usuario> usuarios = new ArrayList<>();
+  @Autowired UsuarioRepository usuarioRepository;
 
   public List<Usuario> findAllUsuarios(){
-    if(usuarios.isEmpty()) {
-      Usuario usuario = new Usuario();
-      usuario.setEmail("teste@teste.com");
-      usuario.setId(1l);
-      usuario.setNome("ADRIANO");
-      usuario.setEstado("SP");
-      usuario.setIndAtivo(true);
-      usuario.setTelefone(212121212);
-      usuarios.add(usuario);
-    }
-    return usuarios;
+    return usuarioRepository.findByIndAtivo(true);
   }
 
+  public void salvaUsuario(Usuario usuario){
+    usuarioRepository.save(usuario);
+  }
 
-
+  public void removeUsuario(long id) {
+    usuarioRepository.inativaUsuario(id);
+  }
 }

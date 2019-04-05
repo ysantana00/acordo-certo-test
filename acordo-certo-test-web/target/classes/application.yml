@@ -5,7 +5,19 @@ server:
 ---
 spring:
   profiles: local, default
----
-
-spring:
-  profiles: prod
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:file:/Users/homem_montanha/Movies/db/test
+    platform: hsqldb
+    username: acordo
+    password: certo
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: hsql
+    show-sql: false
+    database-platform: org.hibernate.dialect.H2Dialect
