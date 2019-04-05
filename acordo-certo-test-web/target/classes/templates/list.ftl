@@ -77,7 +77,7 @@
             <div class="form-group col-md-12">
               <label
                 class="col-md-2 control-lable"
-                for="salary">Estado</label>
+                for="estado">Estado</label>
               <div class="col-md-7">
                 <select
                   class="form-control"
@@ -96,7 +96,7 @@
             <div class="form-group col-md-12">
               <label
                 class="col-md-2 control-lable"
-                for="salary">Estado</label>
+                for="ativo">Ativo</label>
               <input
                 type="checkbox"
                 ng-model="ctrl.usuario.indAtivo"

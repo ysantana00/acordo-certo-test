@@ -28,3 +28,14 @@ O envio dos dados do formulário deve ser via AJAX. Se preferir, utilize framewo
 5) Crie o modelo de dados para este formulário no banco de dados e também a entidade mapeada (JPA) no módulo acordo-certo-test-domain;
 
 6) Implemente todas as camadas: a view chamando o controller, o controller chamando o service e, por fim, o service invocando o repository para persistência dos dados.
+
+
+
+
+
+
+#Considerações
+
+Utilizei um banco de dados simples h2 para facilitar os testes da aplicação.
+Altere no application.yml o path do file do banco.
+
