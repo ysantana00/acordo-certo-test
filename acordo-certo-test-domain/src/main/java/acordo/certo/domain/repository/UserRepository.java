@@ -1,6 +1,6 @@
-package com.acordo.certo.repositories;
+package acordo.certo.domain.repository;
 
-import com.acordo.certo.model.Usuario;
+import acordo.certo.domain.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

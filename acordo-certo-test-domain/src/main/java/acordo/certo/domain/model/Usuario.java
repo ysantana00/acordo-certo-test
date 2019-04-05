@@ -1,4 +1,4 @@
-package com.acordo.certo.model;
+package acordo.certo.domain.model;
 
 import javax.persistence.*;
 import java.io.Serializable;

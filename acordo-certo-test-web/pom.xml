@@ -12,5 +12,18 @@
   <groupId>br.com.acordocerto</groupId>
   <artifactId>acordo-certo-test-web</artifactId>
 
+  <dependencies>
+    <dependency>
+      <groupId>br.com.acordocerto</groupId>
+      <artifactId>acordo-certo-test-domain</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>br.com.acordocerto</groupId>
+      <artifactId>acordo-certo-test-service</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
 
 </project>

@@ -12,5 +12,12 @@
   <groupId>br.com.acordocerto</groupId>
   <artifactId>acordo-certo-test-service</artifactId>
 
+  <dependencies>
+    <dependency>
+      <groupId>br.com.acordocerto</groupId>
+      <artifactId>acordo-certo-test-domain</artifactId>
+    </dependency>
+  </dependencies>
+
 
 </project>

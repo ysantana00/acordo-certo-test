@@ -1,13 +1,15 @@
 package com.acordo.certo.controller;
 
-import com.acordo.certo.model.Usuario;
+import acordo.certo.domain.model.Usuario;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
+import acordo.certo.service.UsuarioService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,20 +21,11 @@ public class RestApiController {
 	public static final Logger logger = LoggerFactory.getLogger(RestApiController.class);
 	List<Usuario> usuarios = new ArrayList<>();
 
+	@Autowired UsuarioService usuarioService;
 
 	@RequestMapping(value = "/user/", method = RequestMethod.GET)
 	public ResponseEntity<List<Usuario>> listAllUsers() {
-		if(usuarios.isEmpty()) {
-			Usuario usuario = new Usuario();
-			usuario.setEmail("teste@teste.com");
-			usuario.setId(1l);
-			usuario.setNome("ADRIANO");
-			usuario.setEstado("SP");
-			usuario.setIndAtivo(true);
-			usuario.setTelefone(212121212);
-			usuarios.add(usuario);
-		}
-		return new ResponseEntity<List<Usuario>>(usuarios, HttpStatus.OK);
+		return new ResponseEntity<List<Usuario>>(usuarioService.findAllUsuarios(), HttpStatus.OK);
 	}
 
 	// -------------------Create a Usuario-------------------------------------------

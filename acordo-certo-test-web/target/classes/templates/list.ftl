@@ -1,6 +1,5 @@
 <div class="generic-container">
     <div class="panel panel-default">
-        <!-- Default panel contents -->
         <div class="panel-heading"><span class="lead">Usuario Acordo Certo </span></div>
 		<div class="panel-body">
 	        <div class="formcontainer">
